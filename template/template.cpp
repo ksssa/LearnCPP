@@ -21,7 +21,7 @@ private:
 template < class Type > class TQueue {
 public:
     TQueue();
-    ~TQueue = delete;
+    ~TQueue() = delete;
     Type    Front();
     void    Push( Type t );
     void    Pop();
@@ -43,13 +43,14 @@ template < class Type > void TStack< Type >::Pop() {
     s.erase( s.begin() );
     size--;
 }
-template < class Type > void TStack< class Type >::Push( Type t ) {
+template < class Type > void TStack< Type >::Push( Type t ) {
     s.push_front( t );
     size++;
 }
 
 template < class Type > TQueue< Type >::TQueue() {
-    l.clear() size = 0;
+    l.clear();
+    size = 0;
 }
 template < class Type > Type TQueue< Type >::Front() {
     return l.front();
@@ -62,7 +63,7 @@ template < class Type > void TQueue< Type >::Pop() {
         l.erase( l.begin() );
 }
 template < class Type > uint8_t TQueue< Type >::Size() {
-    return size
+    return size;
 }
 
 }  // namespace LearnCpp
